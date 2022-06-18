@@ -33,8 +33,9 @@ def exercise_name():
 def try_rest():
     # リクエストデータをJSONとして受け取る
     request_json = request.get_json()
-    name = request_json['friends']
-    for i in name:
-        print (i)
-    response_json = {"response_json": request_json}
+    print(request_json)
+    print(type(request_json))
+    name = request_json['name']
+    print(name)
+    response_json = {"responce_json": request_json}
     return jsonify(response_json)

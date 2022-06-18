@@ -18,6 +18,10 @@ json_data = {
 
 response = requests.post('http://127.0.0.1:5000/try_rest', headers=headers, json=json_data)
 
+response = response.json()
+name = response['responce_json']['friends']
+for i in name:
+    print (i)
 # Note: json_data will not be serialized by requests
 # exactly as it was in the original request.
 #data = '{"name":"dummy", "age":21, "friends":["dummy1", "dummy2", "dummy3"], "is_man":false}'
